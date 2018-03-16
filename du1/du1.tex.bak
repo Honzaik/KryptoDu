@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\begin{document}
+\noindent
+\section\\
+Máme tedy klíče $k,l \in \mathbb{Z}_{27} \setminus \{0\}$ (těleso). Pokud by existovaly 2 zprávy a nějaká dvojice klíčů takové, že se zašifrují na stejný text, pak zobrazení $x \mapsto x \cdot k + l \mod 27$ není prosté pro libovolné $x$. Dokážeme, že je prosté:\\
+$x,y \in \mathbb{Z}_{27}$\\
+$x \mapsto x \cdot k + l \mod 27 $\\
+$y \mapsto y \cdot k + l \mod 27 $\\
+$x \cdot k + l \equiv y \cdot k + l \mod 27$\\ 
+$x \cdot k \equiv y \cdot k  \mod 27$ a $NSD(k, 27) = 1$ tedy krátíme\\
+$x \equiv y \mod 27$\\
+$x,y<27 \rightarrow x=y$\\
+Tedy zobrazení je prosté, tedy nemůže zašifrovat 2 různá písmena na to samé $\rightarrow$ ani text (posloupnost písmen)
+\section\\
+x - nezašifrované písmeno\\
+první část\\
+$x \mapsto x + a \mod 256 \ (\coloneqq y)$\\
+druhá část \\
+$y \mapsto y \cdot c + b \mod 256 \ (\coloneqq e)$\\
+e - zašifrované písmeno\\
+po dosazení za $y$ je to vlastně\\
+$x \mapsto (x+a) \cdot c + b \mod 256 \ (\coloneqq e)$\\
+Tedy funkci $Kas$ lze vyjádřit vzorcem\\
+$Kas(x,a,b,c) = x \cdot c + (a \cdot c + b) \mod 256$\\
+Tedy to je afinní šifra, kde jeden klíč je $c \in \mathbb{Z}^{\text{*}}_{256}$ a druhý je $(a \cdot c + b) \in \mathbb{Z}_{256}$\\
+Takže to je obyčejná afinní šifra, akorát s trochu jiným klíčem. Bezpečnosti to teda určitě nepomůže.\\
+\section\\
+Mějme tedy množinu $\mathbb{A}$ velkých písmen anglické abecedy, tedy $\left\vert{\mathbb{A}}\right\vert = 26$.
+Index koincidence textu $x$ délky $n$ se počítá jako $I_{c}(x)=\sum_{i \in \mathbb{A}} \frac{f_{i}\cdot(f_{i}-1)}{n\cdot(n-1)}$ z definice, kde $f_i$ značí počet výskytů písmene $i$ v textu $x$. Ale $\frac{f_i}{n}$ vlastně značí pravděpodobnost toho, že pokud vybereme náhodný znak z $x$, bude to $i$. Jelikož 
+\end{document}
