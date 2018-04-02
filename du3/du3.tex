@@ -57,5 +57,43 @@ Pr(\mathbf{P}=x \vert \mathbf{C}=y) = \frac{0}{\neq 0} = 0 \neq Pr(\mathbf{P}=x)
 Tedy kryptosystém není absolutně bezpečný $\Rightarrow$ spor.
 
 \section{}
+Máme najít 6 poloslabých klíčů $\Leftrightarrow$ 3 páry. Poloslabý klíč se vyznačuje tím, že se z něj při generování rundovních klíčů nagenerují pouze 2. Samotný klíč nejprve projde permutací, která ho lehce přehází a vymaže parity-check bity. Poté se klíč rozdělí na 2 poloviny ($K_i = L_i || R_i$, kde $K_i$ je daný klíč již po aplikované permutaci) a ty se v každé rundě bitově pošoupnou a nakonec se obě poloviny spojí další permutací. Tuto druhou permutaci vůbec nemusíme uvažovat, jelikož neovlivňuje dané poloviny do dalších rund. První permutaci můžeme v podstatě také ignorovat, akorát poté použijeme její inverzi k zpětnému získání samotného klíče ve správném formátu.
+
+Jelikož půlky klíče bitové posouvají o 1 nebo 2 bity doleva, lze jednodušše odvodit, že například z těchto 2 polovin:
+$$L_1 = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+$$R_1 = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+
+
+se dají "nashiftovat" jen 2 různé stavy:
+
+$$S_1 =[1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+$$S_2 =[0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+
+Nyní si jen stačí uvědomit, že při dešifrovaní se klíče používají opačně. Tedy stav posunu, ve kterém budou tyto poloviny v poslední rundě při šifrování, bude stav 1 při dešifrování. Stav v poslední rundě je stejný jako na počátku, tedy druhý klíč do páru získáme inverzním posunem (v tomto případě to je jedno) o bit doprava. Druhý klíč tedy bude mít poloviny:
+$$L_2 =[0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+$$R_2 =[0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+
+Nyní již stačí aplikovat inverzní permutaci na tyto 2 klíče a správně doplnit parity bity.
+
+Takto lze vymyslet více takovýchto poloviny, které skoro nic nedělají a aplikovat stejný postup.
+
+Náš první pár klíču je (hexadecimálně): 
+
+(\texttt{0x1fe01fe01fe01fe}, \texttt{0xfe01fe01fe01fe01})
+
+Další 2 nalezené páry:
+
+(\texttt{0x1fe01fe00ef10ef1}, \texttt{0xe01fe01ff10ef10e}) odpovídající polovinám:
+$$L_3 = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+$$R_3 = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+$$L_4 = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+$$R_4 = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+
+(\texttt{0x1ffe1ffe0efe0efe}, \texttt{0xfe1ffe1ffe0efe0e}) odpovídající polovinám:
+$$L_5 = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]$$
+$$R_5 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]$$
+$$L_6 = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]$$
+$$R_6 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]$$
+
 
 \end{document}
