@@ -1,0 +1,36 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{standalone}
+\usepackage{preview}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\graphicspath{ {doc-img/} }
+
+\begin{document}
+
+
+\section{}
+První náhodná veličina neexistuje, protože kód není prefix-free, takže nemůže být Huffmanův. 10 je prefixem 101.
+
+Druhá náhodná veličina také neexistuje, protože kód také není Huffmanův, jelikož není "nejlepší možný". Nemá tedy nejmenší možnou entropii, protože kód 110 by šel zkrátit na 11 a vše by fungovalo.
+
+Třetí kódování již Huffmanovo je. Nechť kódujeme množinu $A = \{1,2,3,4,5\}$  Náhodná veličina X: 
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+\hline
+$a \in A$ &1 & 2 & 3 & 4 & 5\\ 
+\hline
+Pr[X=a] & 0,78 & 0,05 & 0,05 & 0,06 & 0,06\\ 
+\hline
+Kód & 1 & 000 & 001 & 010 & 011\\ 
+\hline
+\end{tabular}
+\end{center}
+
+\section{}
+Nechť platí $\exists x,y \in \mathcal{C}, z \in \{0,1\}^* \setminus \epsilon : x=y||z$. Z definice Huffmanova kódování je $y$ list ale $x$ je z definice také list. Ale při dekódování $x$, bychom se dostali nejdříve do $y$ (což je list) ale poté bychom nemohli již nikam pokračovat. Tedy by platilo, že $x=y$, což je ale spor, jelikož $z \neq \epsilon$.
+
+\end{document}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.11)  20 MAR 2018 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.11)  31 MAR 2018 16:17
 entering extended mode
-**./du2.tex
-(du2.tex
+**D:/pCloud/kryptoDu/du2/du2_2.tex
+(D:/pCloud/kryptoDu/du2/du2_2.tex
 LaTeX2e <2017-04-15>
 Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -443,8 +443,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-) (du2.aux)
-\openout1 = `du2.aux'.
+) (du2_2.aux)
+\openout1 = `du2_2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -565,9 +565,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--24
  []
 
 
-Overfull \hbox (16.42883pt too wide) in paragraph at lines 15--24
-\OT1/cmr/m/n/12 prpade totiz pracka muze mt PIN $9999 9993$. K jeho n
-alezen potrebujeme
+Overfull \hbox (5.14404pt too wide) in paragraph at lines 15--24
+\OT1/cmr/m/n/12 davaj v souctu (posledn tri csla - posledn cslo)
+ hod-noty 1-5. Takovych
+ []
+
+
+Overfull \hbox (2.74419pt too wide) in paragraph at lines 15--24
+\OT1/cmr/m/n/12 zjistme prvn ctverici. Pote stac vyzkouset pouze $10
+[]$ moznost, protoze
  []
 
 [1
@@ -589,28 +595,29 @@ Overfull \hbox (0.48071pt too wide) in paragraph at lines 43--51
 "
  []
 
-[3] [4] (du2.aux) ) 
+[3] [4] (du2_2.aux) ) 
 Here is how much of TeX's memory you used:
- 3178 strings out of 493303
- 42412 string characters out of 3138856
+ 3179 strings out of 493303
+ 42493 string characters out of 3138856
  111693 words of memory out of 3000000
- 6685 multiletter control sequences out of 15000+200000
+ 6684 multiletter control sequences out of 15000+200000
  8285 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,30p,684b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cme
-x8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on du2.pdf (4 pages, 131284 bytes).
+ 55i,7n,30p,707b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/c
+mex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+
+Output written on du2_2.pdf (4 pages, 131649 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
