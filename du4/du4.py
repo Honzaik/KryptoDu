@@ -64,7 +64,8 @@ def eGCD(a, b):
     else:
         return (old_r, old_u, old_v)
 
-POLY = 0b110000111
+#POLY = 0b110000111
+POLY = 0b100011011
 
 def invert(element):
     (gcd, u, v) = eGCD(element, POLY)
@@ -74,4 +75,5 @@ def invert(element):
     else:
         return u
 
-print("result of inversion: " + str(invert(200)))
+print("result of inversion: " + str(invert(0xf3)))
+#result 0x0d
