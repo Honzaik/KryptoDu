@@ -29,5 +29,20 @@ Celkem tedy $k = \texttt{07:07:07:0B:0B:0B}$
 Zbytek viz Java kód \texttt{main.java} + \texttt{DES.java}
 
 \section{}
+Pro $k$ musí platit $k<=255 = \texttt{FF}_{16}$. To je maximální hodnota, která jde uložit do jednoho bajtu. Tedy pro šifry s blokem délky $>255$ bajtů tento padding nelze použít.
 
+\section{}
+Nechť $x,y$ jsou nějaké zprávy, nechť $|x|$ je délka zprávy $x$ (pro y stejně).
+
+Buď $x\neq y$ a $|x|=|y|$, poté padding $p$ je stejný pro obě zprávy. Výsledné zprávy jsou tedy $x||p$ (zpráva $x$, ke které je přidán padding) a $y||p$. Ale $x \neq y$ z předpokladů, tedy nemůže platit, že se výsledné zprávy budou rovnat (tedy $x||p \neq y||p$).
+
+Nebo $x\neq y$ a $|x| \neq |y|$. Poté každá zpráva má jiný padding $p_x \neq p_y$. Tedy zase nemůže platit, že $x||p_x \neq y||p_y$ (již poslední bajt zprávy je různý, protože padding má různou délku).
+
+\section{}
+Blok je tedy 8 bajtový, padding má délku tedy maximálně 8 bajtů. Zpráva má 16 bajtů. Tedy buď padding je délky 8 $\Rightarrow$ 8 z 16 bajtů zprávy je určeno. Celkový počet různých zpráv je $256^{16}$ a v tomto případě nám zbývá $256^8$ možností, jak vybrat prvních 8 bajtů zprávy. Pravděpodobnost toho, že náhodná zpráva bude mít správný padding délky 8 je $\frac{256^8}{256^{16}}=256^{-8}$.
+
+Padding může mít délku $1\dots8$ bajtů. Výsledná pravděpodobnost je tedy:
+$$\sum_{i=1}^8 256^{-i} \approx 0.4\; \%$$
+
+Pokud náhodná zpráva má dobrý padding, tak nejpravdědpobněji bude mít padding délku 1 bajt, protože takových zpráv je nejvíce ($256^{15}$ z $256^{16}$). Pravděpodobnost takové zprávy je $\frac{1}{256}$.
 \end{document}
