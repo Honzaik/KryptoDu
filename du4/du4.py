@@ -1,3 +1,4 @@
+
 #zjisti stupen polynomu (kdyz je to jako cislo v binarnim zapisu)
 def deg(x):
     deg = -1;
