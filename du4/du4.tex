@@ -12,9 +12,22 @@
 TODO
 
 \section{}
-Invert viz python kód.\\
+Invert viz python kód.
+
+
 Inverz \texttt{0xF3} v tělese $\mathbb{Z}_2[x]/(x^8+x^7+x^2+x+1)$ je \texttt{0x85}. Pokud tento prvek vynásobíme (jako vektor) maticí z AES dostaneme \texttt{0xEC} a po přičtení vektoru dostaneme výsledek \texttt{0x8F}.
 
+\section{}
+Ze schématu šifrování plyne $DES_{b}(c)=DES_{a}(p)$, kde $p$ je daný plaintext a $c$ daný ciphertext. Provedeme meet-in-the-middle útok. Počet různých klíču $a$ je díky jeho vlastnostem $(\frac{256}{2})^3=128^3\approx2\cdot 10^6$ (počet $k_i$ s lichou paritou je pouze polovina), což není tolik. Vygenerujeme všechny různé ciphertexty, které je možné získat šifrováním plaintextu $p$ klíčem $a$. Celkem nagenerujeme $\approx 2$ milionu ciphertextů, které si někam uložíme společně s příslušným klíčem $a$.
 
+Poté provedeme druhou část útoku, která bude zase naopak šifrovat ciphertext $c$ různými klíči $b$, kterých je také zhruba 2 miliony. Ty si však nemusíme ukládat (ani pravděpodobně nevygenerujeme všechny 2 miliony). Pokaždé stačí zkontrolovat, jesliže příslušný zašifrovaný ciphertext již máme v tabulce. Pokud najdeme shodu, tak víme, jaké jsou oba klíče $a,b$. Tedy známe klíč $k$.\\
+Výsledný klíč $a = \texttt{07:07:07:01:01:01:01:01}$\\
+$b = \texttt{0B:0B:0B:01:01:01:01:01}$\\
+Celkem tedy $k = \texttt{07:07:07:0B:0B:0B}$
+
+
+Zbytek viz Java kód \texttt{main.java} + \texttt{DES.java}
+
+\section{}
 
 \end{document}
