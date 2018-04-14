@@ -1,3 +1,6 @@
+import javax.crypto.Cipher;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.DESKeySpec;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
@@ -49,6 +52,13 @@ public class main {
         return result;
     }
 
+    public static byte[] encrypt( byte[] plaintext, byte[] key ) throws Exception
+    {
+        Cipher des = Cipher.getInstance("DES/ECB/NoPadding");
+        des.init( Cipher.ENCRYPT_MODE, SecretKeyFactory.getInstance("DES").generateSecret( new DESKeySpec( key ) ) );
+        return des.doFinal( plaintext );
+    }
+
     public static void main(String[] args) {
         nagenerovaneHodnoty = new HashMap();
         byte[] plaintext = new byte[]{0,1,2,3,4,5,6,7};
@@ -61,7 +71,7 @@ public class main {
         while(counter < 16711423){ //"nejvetsi" lichý klic je 16711422
             key = getNextKey();
             try {
-                enc = DES.Encrypt(plaintext, key);
+                enc = encrypt(plaintext, key);
                 s = byteToString(enc);
                 nagenerovaneHodnoty.put(s, counter - 1); //ulož nagenerovaný ciphertext společně s danou hodnotou counter, ze kterého je klíč vygenerován
             }catch (Exception e){
@@ -74,7 +84,7 @@ public class main {
         while(counter < 16711423){
             key = getNextKey();
             try {
-                s = byteToString(DES.Encrypt(ciphertext, key));
+                s = byteToString(encrypt(ciphertext, key));
                 if(nagenerovaneHodnoty.containsKey(s)){
                     System.out.println("NAŠEL JSEM SHODU");
                     System.out.println(s); //shoda
