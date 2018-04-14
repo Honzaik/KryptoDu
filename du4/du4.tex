@@ -9,7 +9,37 @@
 
 
 \section{}
-TODO
+Rozebereme teda všechny různé funkce v lDES. Nechť $p_1,p_2,k,k_1,k_2 \in \mathbb{Z}_2^{64}$, operace $+ \iff \oplus$.
+
+\textbf{IP}: je obyčejný výběr bitů (zbavení se parity bits) a jejich permutace. Vybeme-li tedy bity z $p_1, p_2$ a poté je sečteme je to samé jako jejich sečtení a poté výběr jejich součtů. Vždy se vyberou bity na stejných pozicích. Tedy $IP(p_1 + p_2)=IP(p_1)+IP(p_2)$. To samé pro její inverz.
+
+Nyní budeme používat pro vstupy funkcí stejné značení jako u funkce IP. Samozřejmě do následujících funkcí není na vstupu přímo plaintext, ale jeho modifikovaná forma předcházejícími funkcemi. Stejně tak pro klíč.
+
+\textbf{Split} (rozdělení na levou polovinu a pravou): Tato funkce je zřejmě také lineární, jelikož jednoduše rozděluje vstup na 2 poloviny. Je stejné jestli je nejdříve sečteme a rozdělíme nebo rozdělíme a poté půlky sečteme. Tedy $Split(p_1 + p_2) = Split(p_1)+Split(p_2)$.
+
+\textbf{Expand} (expanze 32-bit vstupu na 48-bit): Zřejmě také lineární, jestliže bity sečteme a poté expandujeme bude mít stejný výsledek jako expanze $p_1, p_2$ a poté jejich následný součet (bity z $p_1, p_2$ jdou na stejnou pozici). $Expand(p_1+p_2)=Expand(p_1)+Expand(p_2)$.
+
+\textbf{PC1}: Stejný případ jako \textbf{IP}, akorát je tato funkce aplikována na $k_1, k_2$. $PC(k_1+k_2)=PC(k_1)+PC(k_2)$.
+
+\textbf{Shift}: Bitová rotace je také lineární. Jestliže posuneme bity $k_1$ a $k_2$ o $n$ bitů doleva/doprava a sečteme je, tak dostaneme stejný výsledek jako, když je sečteme a posuneme. $Shift(k_1+k_2,n) = Shift(k_1,n)+Shift(k_2,n)$.
+
+\textbf{PC2}: Stejné jako \textbf{IP}, \textbf{PC1}.
+
+\textbf{Add} (přičtení klíče): Tato funkce zřejmě není přímo z definice lineární (v plaintextu ani klíči), jelikož $Add(p_1+p_2,k)=(p_1+p_2)+k \neq (p_1+k)+(p_2+k) = Add(p_1,k)+Add(p_2,k)$ a $Add(p,k_1+k_2)=p+(k_1+k_2) \neq (p+k_1)+(p+k_2) = Add(p,k_1)+Add(p,k_2)$. Použijeme-li fakt, že funkce je lineární, pokud každý výstupní bit je lineární kombinací vstupních bitů, tak funkce \textbf{Add} je lineární. Výstupy $p_1+p_2+k $ a $p_1+p_2+2k$ (koeficienty jsou $(1,1,1)$ a $(1,1,2)$) jsou lineární kombinace vstupních bitů $p_1,p_2,k$. Výstupy $p+k_1+k_2$ a $2p+k_1+k_2$ (koeficienty jsou ($(1,1,1)$ a $(2,1,1)$) jsou lineární kombinace vstupních bitů $p,k_1,k_2$.
+
+\textbf{Sbox}: Z předpokladů je lineární.
+
+\textbf{P} (permutace výstupu z \textbf{Sbox}): Stejné jako \textbf{IP}, \textbf{PC1}, \textbf{PC2}
+
+\textbf{RoundKey}: Odvození klíče je složení lineárních funkcí \textbf{PC1}, \textbf{Shift}, \textbf{PC2} a složení lineárních funkcí je lineární.
+
+\textbf{F}: Feistelova funkce je složení lineárních funkcí \textbf{Expand}, \textbf{Add}, \textbf{Sbox} a \textbf{P}. Takže je také lineární.
+
+\textbf{Round}: Runda je složena z lineárních funkcí \textbf{F}, \textbf{RoundKey} a přičtení výstupu z \textbf{F} k jedné polovině (v podstatě stejné jako v \textbf{Add}). Takže je také lineární.
+
+Celkově je teda lDES lineární v klíči i plaintextu.
+
+
 
 \section{}
 Invert viz python kód.
