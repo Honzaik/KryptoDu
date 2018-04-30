@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  30 APR 2018 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  30 APR 2018 13:09
 entering extended mode
 **D:/pCloud/kryptoDu/du5/du5.tex
 (D:/pCloud/kryptoDu/du5/du5.tex
@@ -562,27 +562,42 @@ File: images/graf.png Graphic file (type png)
 <use images/graf.png>
 Package pdftex.def Info: images/graf.png  used on input line 17.
 (pdftex.def)             Requested size: 390.0pt x 62.7591pt.
- [1
+
+Overfull \hbox (0.67929pt too wide) in paragraph at lines 32--33
+[]\OT1/cmr/m/n/12 Pokud budeme uvazovat reg-istr ve Fi-bonac-ciho tvaru, tak z
+e zadan zname
+ []
+
+[1
 
 {C:/Users/honza/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/gr
-af.png>] (du5.aux) ) 
+af.png>]
+<images/schema.png, id=12, 663.98062pt x 137.01187pt>
+File: images/schema.png Graphic file (type png)
+<use images/schema.png>
+Package pdftex.def Info: images/schema.png  used on input line 101.
+(pdftex.def)             Requested size: 390.0pt x 80.47672pt.
+ [2 <./images/schema.png>] [3] (du5.aux) ) 
 Here is how much of TeX's memory you used:
- 3195 strings out of 493305
- 42786 string characters out of 3138874
- 105231 words of memory out of 3000000
- 6690 multiletter control sequences out of 15000+200000
+ 3200 strings out of 493305
+ 42883 string characters out of 3138874
+ 118231 words of memory out of 3000000
+ 6694 multiletter control sequences out of 15000+200000
  8891 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,25p,410b,123s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on du5.pdf (1 page, 75003 bytes).
+ 41i,9n,25p,466b,123s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on du5.pdf (3 pages, 119526 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

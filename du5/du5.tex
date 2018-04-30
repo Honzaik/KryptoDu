@@ -27,4 +27,119 @@ Počáteční stav v Galoisově módu tedy je $10010$. $x^5+x^4+x^2+x+1$ je sice
 
 \section{}
 Pokud je $x_1 = 0$, tak výsledek odpovídá součinu $x_2 \cdot x_3$. Pokud je $x_1 = 1$, tak výsledek odpovídá skoro (až na poslední řádek, ale to se opraví přičtením již zjistěného $x_2 \cdot x_3$) součtu $x_2+x_3$, takže kandidátem na polynom je $x_1 \cdot (x_2+x_3) + x_2 \cdot x_3 = x_1 \cdot x_2 + x_1 \cdot x_3 + x_2 \cdot x_3$ a ten funguje.
+
+\section{}
+Pokud budeme uvažovat registr ve Fibonacciho tvaru, tak ze zadání známe $s_0 = 1, s_1 = 1, \cdots, s_9 = 1$. To co neznáme jsou koeficienty $c_0$ (ten je asi vždy 1) $, c_1, \cdots, c_4$. Dokážeme je ale dopočítat jednoduchou soustavou rovnic plynoucí ze schématu Fibonacciho registru. Např. $s_5 = s_0 \cdot c_0 + s_1 \cdot c_1 + s_2 \cdot c_2 + s_3 \cdot c_3 + s_4 \cdot c_4$. Dostaneme tedy soustavu rovnic:
+$$
+\begin{pmatrix}
+s_0 & s_1 & s_2 & s_3 & s_4\\
+s_1 & s_2 & s_3 & s_4 & s_5\\
+s_2 & s_3 & s_4 & s_5 & s_6\\
+s_3 & s_4 & s_5 & s_6 & s_7\\
+s_4 & s_5 & s_6 & s_7 & s_8
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+c_0\\
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+s_5\\
+s_6\\
+s_7\\
+s_8\\
+s_9
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1\\
+1 & 1 & 1 & 1 & 0\\
+1 & 1 & 1 & 0 & 0\\
+1 & 1 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 1\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+c_0\\
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0\\
+0\\
+1\\
+1
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+c_0\\
+c_1\\
+c_2\\
+c_3\\
+c_4
+\end{pmatrix} = \begin{pmatrix}
+1\\
+0\\
+1\\
+0\\
+0
+\end{pmatrix}
+$$
+Takže víme jak registr vypadá, naplníme ho stavem $s_0=0, \cdots, s_4=1$ a dopočítáme posloupnost. Prvních 10 bitů je: $0000100101$.
+
+\section{}
+Uvažujme registr v Galoisově tvaru. Poslední bit stavu je vždy výstupní bit předchozího stavu, je-li $c_0 = 1$, tak máme rovnost $a_0^{t+1} = a_{n-1}^{(t)} \cdot a_0$ pokud uvažujeme notaci z přednášky ($g = a$ a také $c = a$) viz obrázek:
+\includegraphics[width=\textwidth]{schema.png}
+Dostaneme zase soustavu rovnic pro $L(a^{(t)}) = a^{(t+1)}$:
+$$
+\begin{pmatrix}
+0 & 0 & 0 & \cdots & 0 & a_0\\
+1 & 0 & 0 & \cdots & 0 & a_1\\
+0 & 1 & 0 & \cdots & 0 & a_2 &\\
+\vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
+0 & 0 & \cdots & 1 & 0 & a_{n-2}\\
+0 & 0 & \cdots & 0 & 1 & a_{n-1}\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+a_0^{(t)}\\
+a_1^{(t)}\\
+a_2^{(t)}\\
+\vdots\\
+a_{n-2}^{(t)}\\
+a_{n-1}^{(t)}\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_0^{(t+1)}\\
+a_1^{(t+1)}\\
+a_2^{(t+1)}\\
+\vdots\\
+a_{n-2}^{(t+1)}\\
+a_{n-1}^{(t+1)}\\
+\end{pmatrix}
+$$
+Inverzní matice existuje pouze v případě, pokud $a_0 \neq 0$ (jinak se dělí 0). V tomto případě vypadá $L^{-1}:$
+$$
+\begin{pmatrix}
+a_1 & 1 & 0 & \cdots & 0 & 0\\
+a_2 & 0 & 1 & \cdots & 0 & 0\\
+a_3 & 0 & 0 & \ddots & 0 & 0 &\\
+\vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
+a_{n-1} & 0 & \cdots & 0 & 0 & 1\\
+1 & 0 & \cdots & 0 & 0 & 0\\
+\end{pmatrix}
+$$
+
+\section{}
+
 \end{document}
