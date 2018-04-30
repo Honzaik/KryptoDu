@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  30 APR 2018 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.15)  30 APR 2018 13:52
 entering extended mode
 **D:/pCloud/kryptoDu/du5/du5.tex
 (D:/pCloud/kryptoDu/du5/du5.tex
@@ -579,10 +579,10 @@ Package pdftex.def Info: images/schema.png  used on input line 101.
 (pdftex.def)             Requested size: 390.0pt x 80.47672pt.
  [2 <./images/schema.png>] [3] (du5.aux) ) 
 Here is how much of TeX's memory you used:
- 3200 strings out of 493305
- 42883 string characters out of 3138874
+ 3201 strings out of 493305
+ 42891 string characters out of 3138874
  118231 words of memory out of 3000000
- 6694 multiletter control sequences out of 15000+200000
+ 6695 multiletter control sequences out of 15000+200000
  8891 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,25p,466b,123s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -595,7 +595,7 @@ mmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on du5.pdf (3 pages, 119526 bytes).
+Output written on du5.pdf (3 pages, 121127 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
