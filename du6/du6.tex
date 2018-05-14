@@ -50,7 +50,7 @@ Dále $i_k + 1 = j_k = j_{k-1} + S[i_k] = j_{k-1} + 1 \Rightarrow i_k = j_{k-1}$
 
 \section{}
 Ukážeme, že z kolize ($x$,$y$)  pro $h$ (tedy $x\neq y$) lze sestrojit kolizi pro $f$ (obměněná implikace).\\
-Nechť $x = M_1||\cdots||M_n$, $y = N_1||\cdots||N_k$, $x' = M_1'||\cdots||M_{n+1}'$ a $y' = N_1'||\cdots||N_{k+1}'$. Dále označme mezistavy pro $x$ jako $S_0, S_1, \cdots, S_{n+1}$ a stavy pro $y$ jako $T_0, T_1, \cdots, T_{k+1}$ kde $k,n \in \mathbb{N}$. Nakonec $q$ přísluší $x$ a $q'$ přísluší $y$. 
+Nechť $x = M_1||\dots||M_n$, $y = N_1||\dots||N_k$, $x' = M_1'||\dots||M_{n+1}'$ a $y' = N_1'||dots||N_{k+1}'$. Dále označme mezistavy pro $x$ jako $S_0, S_1, \dots, S_{n+1}$ a stavy pro $y$ jako $T_0, T_1, \dots, T_{k+1}$ kde $k,n \in \mathbb{N}$. Nakonec $q$ přísluší $x$ a $q'$ přísluší $y$. 
 
 Předpokládáme, že: 
 \[h(x)=h(y) \iff S_{n+1} = T_{k+1} \iff f(S_n, M_{n+1}') = f(T_k, N_{k+1}')\]
@@ -62,11 +62,21 @@ Takže víme, že $q=q'$. Pokračujeme dále:
 Tedy zase buď máme kolizi pro $f$ (hotovo), nebo $S_{n-1} = T_{k-1} \land M_n' = N_k'$. Pokračujeme stejně:
 \[[(M_n'=1||M_n||0^{d-q}) \land (N_k'=1||N_k||0^{d-q})] \Rightarrow\ M_n=N_k\]
 
-Pokud $k=n$, tak jistě existuje $i \in \{1, \cdots, n\}$ tž. $M_i' \neq N_i'$, protože $x \neq y$ $\Rightarrow$ kolize pro $f$.
+Pokud $k=n$, tak jistě existuje $i \in \{1, \dots, n\}$ tž. $M_i' \neq N_i'$, protože $x \neq y$ $\Rightarrow$ kolize pro $f$.
 
-Nebo BÚNO $k < n$. Pokud nenastane kolize pro $i \in \{2, \cdots, k\}$, tak z toho plyne $N_1' = M_{n-k+1}'$, kde $N_1' = (0 || N_1) \land M_{n-k+1}'=(1||M_{n-k+1})$ což nemůže platit, protože se liší v prvním bitu. 
+Nebo BÚNO $k < n$. Pokud nenastane kolize pro $i \in \{2, \dots, k\}$, tak z toho plyne $N_1' = M_{n-k+1}'$, kde $N_1' = (0 || N_1) \land M_{n-k+1}'=(1||M_{n-k+1})$ což nemůže platit, protože se liší v prvním bitu. 
 
-Tedy spor, takže musela nastat kolize pro $i\in\{2, \cdots, k\}$, tedy kolize pro $f$. Takže $f$ bezkolizní $\Rightarrow h$ je bezkolizní.
+Tedy spor, takže musela nastat kolize pro $i\in\{2, \dots, k\}$, tedy kolize pro $f$. Takže $f$ bezkolizní $\Rightarrow h$ je bezkolizní.
 
 \section{}
+Víme $N = p \cdot q$ a $\varphi(N)=(p-1)\cdot(q-1)=p \cdot q - p - q + 1$.
+\[N - \varphi(N) + 1 = p \cdot q - (p \cdot q - p - q + 1) + 1 = p + q \]
+\[(p-q)^2 = p^2-2\cdot p \cdot q + q^2 = (p+q)^2 - 4\cdot p \cdot q \]
+\[\Rightarrow p-q = \sqrt{(p+q)^2-4\cdot N} = \sqrt{(N - \varphi(N) + 1)^2 - 4\cdot N} \]
+\[\Rightarrow p+q + (p-q) = 2\cdot p \Rightarrow p = \frac{p+q + (p-q)}{2}\]
+
+A výsledek je:
+
+\[p = 2611972000\dots 2808729943\]
+\[q = 2633425658\dots 7502425297\]
 \end{document}
